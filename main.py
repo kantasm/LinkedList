@@ -107,8 +107,17 @@ class LinkedList:
         index = self.get_index(curr_value)
         self.insert_at(index, new_value)
 
-    #insert_after_value
-    #remove_by_value
+    def isLengthEvenOrOdd(self):
+        if self.head:
+            curr = self.head
+            count = 0
+            while curr:
+                count+=1
+                curr = curr.next
+            return 'Even' if count%2 == 0 else 'Odd'
+        else:
+            return None
+
 
 if __name__ == '__main__':
     ll = LinkedList()
@@ -131,4 +140,6 @@ if __name__ == '__main__':
     ll.print_list()
     ll.insert_before_value("Bannana", "Raspberry")
     ll.print_list()
-    pass
+    ll.remove_by_value("Bannana")
+
+    print(ll.isLengthEvenOrOdd())
